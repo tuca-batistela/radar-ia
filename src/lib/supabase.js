@@ -1,10 +1,21 @@
 import { createClient } from "@supabase/supabase-js";
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+function criarCliente() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
 
-export const isSupabaseConfigured = Boolean(url && anonKey);
+  if (!url || !anonKey) {
+    return { supabase: null, isSupabaseConfigured: false };
+  }
 
-export const supabase = isSupabaseConfigured
-  ? createClient(url, anonKey)
-  : null;
+  try {
+    return {
+      supabase: createClient(url, anonKey),
+      isSupabaseConfigured: true,
+    };
+  } catch {
+    return { supabase: null, isSupabaseConfigured: false };
+  }
+}
+
+export const { supabase, isSupabaseConfigured } = criarCliente();

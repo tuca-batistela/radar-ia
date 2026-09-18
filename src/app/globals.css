@@ -1,4 +1,6 @@
 :root {
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
   --paper: #f2eee4;
   --sheet: #fffcf6;
   --ink: #1c1a16;

@@ -38,7 +38,7 @@ export default function CaseForm({ onCreated }) {
 
     if (!isSupabaseConfigured || !supabase) {
       setErro(
-        "As variáveis NEXT_PUBLIC_SUPABASE_URL e NEXT_PUBLIC_SUPABASE_ANON_KEY não estão configuradas."
+        "As variáveis NEXT_PUBLIC_SUPABASE_URL e NEXT_PUBLIC_SUPABASE_ANON_KEY não estão configuradas no .env.local nem na Vercel."
       );
       return;
     }

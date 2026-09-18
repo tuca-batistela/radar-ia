@@ -56,8 +56,8 @@ export default function Mural() {
         <div className="banner error" role="alert">
           <p>
             Configure as variáveis NEXT_PUBLIC_SUPABASE_URL e
-            NEXT_PUBLIC_SUPABASE_ANON_KEY no arquivo .env.local para gravar e
-            listar os casos.
+            NEXT_PUBLIC_SUPABASE_ANON_KEY no arquivo .env.local ou nas
+            variáveis de ambiente da Vercel. Depois, faça um novo deploy.
           </p>
         </div>
       ) : null}
